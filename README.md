@@ -1,7 +1,9 @@
 # NosqlEXP3
 
 孟子成（201834969）
+
 此项目为非关系型数据库的课程设计。
+
 使用Django和django-mongoengine实现。
 
 ## 运行方式
