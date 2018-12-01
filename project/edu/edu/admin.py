@@ -11,13 +11,13 @@ class StudentAdmin(admin.DocumentAdmin):
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.DocumentAdmin):
-    search_fields = ['tid']
+    search_fields = ['sex', 'dname']
     list_display = ('tid', 'name', 'sex', 'age', 'dname')
 
 
 @admin.register(Course)
 class CourseAdmin(admin.DocumentAdmin):
-    search_fields = ['cid']
+    search_fields = ['fcid']
     list_display = ('cid', 'name', 'fcid', 'credit')
 
 
