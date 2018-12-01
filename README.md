@@ -6,9 +6,9 @@
 
 ## 运行方式
 
-./env/bin/python project/edu/manage.py createsuperuser
+    ./env/bin/python project/edu/manage.py createsuperuser
 
-./env/bin/python project/edu/manage.py runserver
+    ./env/bin/python project/edu/manage.py runserver
 
 ## 管理界面登陆
 
