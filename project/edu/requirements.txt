@@ -1,0 +1,13 @@
+django>=1.11
+mongoengine>=0.14
+
+
+
+sphinx
+nose
+coverage
+
+Pillow
+django-bootstrap3
+
+mongoengine==0.10.6
