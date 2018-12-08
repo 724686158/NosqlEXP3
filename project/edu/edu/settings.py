@@ -4,7 +4,8 @@ import os
 
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.realpath(os.path.join(PROJECT_ROOT, '../../../')))
-
+LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'
 
 DEBUG = True
 

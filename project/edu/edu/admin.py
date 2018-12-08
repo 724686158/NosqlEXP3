@@ -2,6 +2,8 @@ from django_mongoengine import mongo_admin as admin
 
 from edu.models import Student, Teacher, Course, StudentCourse, TeacherCourse
 
+admin.site.site_header = '教务信息管理系统'
+admin.site.site_title = '教务信息管理系统'
 
 @admin.register(Student)
 class StudentAdmin(admin.DocumentAdmin):

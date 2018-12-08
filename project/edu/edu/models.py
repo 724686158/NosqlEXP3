@@ -3,6 +3,7 @@ from django_mongoengine import fields
 
 
 class Student(Document):
+
     sid = fields.StringField(max_length=255, primary_key=True)
     name = fields.StringField(max_length=255)
     sex = fields.StringField(max_length=255)
