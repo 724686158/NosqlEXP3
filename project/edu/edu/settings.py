@@ -5,6 +5,7 @@ import os
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.realpath(os.path.join(PROJECT_ROOT, '../../../')))
 LANGUAGE_CODE = 'zh-hans'
+
 TIME_ZONE = 'Asia/Shanghai'
 
 DEBUG = True
@@ -81,6 +82,14 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -127,10 +136,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-
     'django_mongoengine',
     'django_mongoengine.mongo_auth',
     'django_mongoengine.mongo_admin',
+
+    'rest_framework',
+    'rest_framework_mongoengine',
 
     'bootstrap3',
 

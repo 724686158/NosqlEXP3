@@ -3,8 +3,7 @@ from django_mongoengine import fields
 
 
 class Student(Document):
-
-    sid = fields.StringField(max_length=255, primary_key=True)
+    sid = fields.StringField(max_length=255, primary_key=True, editable=True)
     name = fields.StringField(max_length=255)
     sex = fields.StringField(max_length=255)
     age = fields.StringField(max_length=255)
@@ -14,7 +13,7 @@ class Student(Document):
 
 
 class Teacher(Document):
-    tid = fields.StringField(max_length=255, primary_key=True)
+    tid = fields.StringField(max_length=255, primary_key=True, editable=True)
     name = fields.StringField(max_length=255)
     sex = fields.StringField(max_length=255)
     age = fields.StringField(max_length=255)
@@ -22,9 +21,9 @@ class Teacher(Document):
 
 
 class Course(Document):
-    cid = fields.StringField(max_length=255, primary_key=True)
+    cid = fields.StringField(max_length=255, primary_key=True, editable=True)
     name = fields.StringField(max_length=255)
-    fcid = fields.StringField(max_length=255)
+    fcid = fields.StringField(max_length=255, default=None, null=True, blank=True)
     credit = fields.StringField(max_length=255)
 
 
