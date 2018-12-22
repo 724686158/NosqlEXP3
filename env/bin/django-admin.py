@@ -1,4 +1,4 @@
-#!/Users/mengzicheng/code/NosqlEXP3/env/bin/python3.6
+#!/Users/mengzicheng/code/NosqlEXP3/env/bin/python
 from django.core import management
 
 if __name__ == "__main__":
