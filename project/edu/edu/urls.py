@@ -12,6 +12,8 @@ router.register(r'teacher', TeacherViewSet, r"teacher")
 router.register(r'course', CourseViewSet, r"course")
 router.register(r'teacher_course', TeacherCourseViewSet, r"teacher_course")
 router.register(r'student_course', StudentCourseViewSet, r"student_course")
+# router.register(r't_list', CourseSelectionViewSet, r"t_list")
+
 
 
 urlpatterns = [

@@ -30,10 +30,13 @@ class Course(Document):
 class StudentCourse(Document):
     sid = fields.IntField()
     cid = fields.IntField()
-    score = fields.IntField()
+    score = fields.IntField(blank=True, null=True)
     tid = fields.IntField()
 
 
 class TeacherCourse(Document):
     cid = fields.IntField()
     tid = fields.IntField()
+
+
+

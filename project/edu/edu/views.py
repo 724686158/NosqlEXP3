@@ -6,6 +6,8 @@ from rest_framework import parsers, renderers
 from edu.serializers import *
 from edu.models import *
 
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 class StudentViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
     serializer_class = StudentSerializer
@@ -41,3 +43,10 @@ class TeacherCourseViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return TeacherCourse.objects.all()
+
+#
+# class CourseSelectionViewSet(viewsets.GenericAPIView):
+#
+#
+#     def get_queryset(self):
+#         return Teacher.objects.all()
