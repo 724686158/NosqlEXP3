@@ -12,7 +12,6 @@ class StudentSerializer(DocumentSerializer):
     class Meta:
         model = Student
         fields = '__all__'
-        lookup_field = 'sid'
 
 
 class TeacherSerializer(DocumentSerializer):
@@ -20,7 +19,6 @@ class TeacherSerializer(DocumentSerializer):
     class Meta:
         model = Teacher
         fields = '__all__'
-        lookup_field = 'tid'
 
 
 class CourseSerializer(DocumentSerializer):
@@ -28,7 +26,6 @@ class CourseSerializer(DocumentSerializer):
     class Meta:
         model = Course
         fields = '__all__'
-        lookup_field = 'tid'
 
 
 class StudentCourseSerializer(DocumentSerializer):

@@ -11,14 +11,14 @@ if __name__ == '__main__':
     data = []
     for row in df.iterrows():
         data.append({'sid': row[1]['SID'],
-                           'name': row[1]['NAME'],
-                           'sex': row[1]['SEX'],
-                           'age': row[1]['AGE'],
-                           'birthday': row[1]['BIRTHDAY'],
-                           'dname': row[1]['DNAME'],
-                           'class_name': row[1]['CLASS'],
-                           })
-    db['student'].insert_many(data)
+                        'name': row[1]['NAME'],
+                        'sex': row[1]['SEX'],
+                        'age': row[1]['AGE'],
+                        'birthday': row[1]['BIRTHDAY'],
+                        'dname': row[1]['DNAME'],
+                        'class': row[1]['CLASS'],
+                    })
+    db['student'].insert(data)
     print("student表共{}条数据".format(db['student'].count()))
 
     #teacher
@@ -32,7 +32,7 @@ if __name__ == '__main__':
                            'age': row[1]['AGE'],
                            'dname': row[1]['DNAME'],
                            })
-    db['teacher'].insert_many(data)
+    db['teacher'].insert(data)
     print("teacher表共{}条数据".format(db['teacher'].count()))
 
     # course
@@ -45,7 +45,7 @@ if __name__ == '__main__':
                               'fcid': row[1]['FCID'],
                               'credit': int(row[1]['CREDIT']) if row[1]['CREDIT'] else None,
                               })
-    db['course'].insert_many(data)
+    db['course'].insert(data)
     print("course表共{}条数据".format(db['course'].count()))
 
     # student_course
@@ -55,10 +55,10 @@ if __name__ == '__main__':
     for row in df.iterrows():
         data.append({'sid': int(row[1]['SID']) if row[1]['SID'] else None,
                              'cid': int(row[1]['CID']) if row[1]['CID'] else None,
-                             'score': int(row[1]['SCORE']) if row[1]['SCORE'] else None,
+                             'score': float(row[1]['SCORE']) if row[1]['SCORE'] else None,
                              'tid': int(row[1]['TID']) if row[1]['TID'] else None,
                              })
-    db['student_course'].insert_many(data)
+    db['student_course'].insert(data)
     print("student_course表共{}条数据".format(db['student_course'].count()))
 
     # teacher_course
@@ -69,5 +69,5 @@ if __name__ == '__main__':
         data.append({'cid': int(row[1]['CID']) if row[1]['CID'] else None,
                      'tid': int(row[1]['TID']) if row[1]['TID'] else None,
                      })
-    db['teacher_course'].insert_many(data)
+    db['teacher_course'].insert(data)
     print("teacher_course表共{}条数据".format(db['teacher_course'].count()))

@@ -9,7 +9,7 @@ from edu.models import *
 
 class StudentViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
     serializer_class = StudentSerializer
-    lookup_field = 'sid'
+
     def get_queryset(self):
         return Student.objects.all()
 
@@ -17,7 +17,6 @@ class StudentViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
 
 class TeacherViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
     serializer_class = TeacherSerializer
-    lookup_field = 'tid'
 
     def get_queryset(self):
         return Teacher.objects.all()
@@ -25,7 +24,6 @@ class TeacherViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
 
 class CourseViewSet(viewsets.ModelViewSet, viewsets.GenericViewSet):
     serializer_class = CourseSerializer
-    lookup_field = 'cid'
 
     def get_queryset(self):
         return Course.objects.all()
